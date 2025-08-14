@@ -1,6 +1,20 @@
 {
   "name": "ts-mom4-v1",
   "version": "0.0.0",
+  "private": true,
+  "description": "This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.",
+  "homepage": "https://github.com/Muurein/ts-mom4-v1#readme",
+  "bugs": {
+    "url": "https://github.com/Muurein/ts-mom4-v1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muurein/ts-mom4-v1.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,12 +22,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^20.0.0",
-    "@angular/compiler": "^20.0.0",
+    "@angular/compiler": "^20.1.2",
     "@angular/core": "^20.0.0",
     "@angular/forms": "^20.0.0",
+    "@angular/material": "^20.1.2",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
     "rxjs": "~7.8.0",
