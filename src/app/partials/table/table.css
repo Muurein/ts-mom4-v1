@@ -3,3 +3,9 @@ table {
     width: 100%;
     border: 1px solid black;
 }
+
+th.mat-sort-header-sorted {
+    background-color: palegreen;
+    color:black;
+    border-radius: 50%;
+}
