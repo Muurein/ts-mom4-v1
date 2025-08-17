@@ -1,5 +1,5 @@
 export interface Course {
     code: string,
-    name: string,
+    coursename: string,
     progression: string,
 }
