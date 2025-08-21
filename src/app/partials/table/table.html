@@ -1,56 +1,11 @@
-<!-- <table >
-  <tr>
-    <th>Kurskod</th>
-    <th>Kursnamn</th>
-    <th>Progression</th>
-  </tr>
-  <tr *ngFor="let course of courses">
-    <td>{{ courses.code }}</td>
-    <td>{{ courses.coursename }}</td>
-    <td>{{ courses.progression }}</td>
-  </tr>
-</table> -->
-
-<!-- <section>
-  <article *ngFor="let course of courses">
-    <p >{{ courses.code }}</p>
-    <p >{{ courses.coursename }}</p>
-    <p >{{ courses.progression }}</p>
-  </article>
-</section>> -->
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Kurskod</th>
-      <th>Kursnamn</th>
-      <th>Progression</th>
-    </tr>
-  </thead>
-  <tbody>
- skapar rader beroende på input
-    <tr *ngFor="let row of data">
-      <td *ngFor="let column of columns">
-        {{  row[column.key] }}
-      </td>
-    </tr>
-  </tbody>
-</table> -->
 <!--sökfält-->
 <mat-form-field>
   <mat-label>Sök här</mat-label>
   <input matInput (keyup)="applyFilter($event)" #input>
 </mat-form-field>
 
-<!-- sorteringsknappar
-<div>
-<button mat-raised-button (click)="sortData('desc')">Sortera efter kurskod</button>
-<button mat-raised-button (click)="sortData('desc')">Sortera efter kursnamn</button>
-<button mat-raised-button (click)="sortData('desc')">Sortera efter progression</button>
-</div> -->
-
 <!--tabell-->
-<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8"> 
 
   <!--tabell-kolumner-->
   <!--kurskod-->

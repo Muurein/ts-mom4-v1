@@ -14,9 +14,9 @@ export class CoursesService {
 
   constructor(private http: HttpClient) {
 
-  } //http = inject(HttpClient); och lägg till inject i Injectable import
+  } 
 
-  //metod
+  //hämta kurser
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.url);
   }

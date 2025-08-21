@@ -1,13 +1,12 @@
-import { Component, OnInit, input, signal, inject, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableDataSource, MatTableModule, MatCellDef } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
 import { Course } from '../../model/course';
 import { CoursesService } from '../../services/courses.service';
-import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
-import { MatButtonModule } from '@angular/material/button';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 
 
@@ -18,34 +17,29 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
   styleUrl: './table.css'
 })
 
+
 export class Table implements OnInit, AfterViewInit {
-  //för skärmläsare
-  private _liveAnnouncer = inject(LiveAnnouncer);
-  
-  //properties och hämtar interfacet
+
+  //properties och interface
   courses: Course[] = [];
   displayedColumns: string[] = ["code", "coursename", "progression"];
   dataSource = new MatTableDataSource<Course>([]);
 
+  //inleder sortering
   @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
   }
 
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce("Sorting cleared");
-    }
-  }
-  
 
-
+  //konstruktor
   constructor(private coursesService: CoursesService) {}
 
-  ngOnInit() { //kan testa byta ut coursesArray i pilen till courses
+
+  //när sidan laddas in
+  ngOnInit() { 
+
     this.coursesService.getCourses().subscribe((courses) => {
 
       this.courses = courses;
@@ -53,6 +47,7 @@ export class Table implements OnInit, AfterViewInit {
 
     });
   }
+
 
   //filtrera datan efter kurskod, kursnamn och progression
   applyFilter(event: Event) {
@@ -70,6 +65,8 @@ export class Table implements OnInit, AfterViewInit {
     };
   }
 
+  
+  //sortering
   sortCourses(direction: "desc") {
     this.displayedColumns.forEach(column => {
       this.sort.sort({id: column, start: direction, disableClear: true})
