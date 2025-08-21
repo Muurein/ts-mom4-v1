@@ -48,7 +48,7 @@ export class Table implements OnInit, AfterViewInit {
     });
   }
 
-
+  
   //filtrera datan efter kurskod, kursnamn och progression
   applyFilter(event: Event) {
     

@@ -15,4 +15,10 @@ Webbplatsen använder sig av Angular v.20.
 Uppgiften löstes främst tillsammans med det tillgängliga lärarledda materialet och Angular egna webbplats "Angular Material" (https://material.angular.dev). Flera olika moduler har laddats ner, 
 bland annat MatSortModule (för sortering av kurser) och MatTableModule (för skapandet av tabellen). 
 
+Själva uppbyggnanden består av:
+    - home: här visas all data.
+    - table: har hand om majoriteten av det som har med tabellen att göra.
+    - courses-service: hämtar kurserna från API:t. 
+    - course: ett interface som bestämmer hur kurserna ska vara uppbyggda.
+
 
